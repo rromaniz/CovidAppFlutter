@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class Cardtop extends StatelessWidget {
   final String casosConfirmados;
@@ -10,7 +11,7 @@ class Cardtop extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Container(
       width: double.infinity,
-      height: size.height * 0.3,
+      height: 25.h,
       padding: EdgeInsets.all(7),
       decoration: BoxDecoration(
           color: Color.fromRGBO(74, 191, 180, 1),

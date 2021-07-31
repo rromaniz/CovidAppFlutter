@@ -8,8 +8,9 @@ class InfoTop extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Container(
-      width: double.infinity,
-      height: size.height * 0.3,
+      constraints: BoxConstraints(
+        maxHeight: size.height * 0.3,
+      ),
       child: Padding(
         padding: const EdgeInsets.all(6.0),
         child: ClipRRect(
