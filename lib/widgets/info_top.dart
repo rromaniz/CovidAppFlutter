@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class InfoTop extends StatelessWidget {
@@ -6,10 +7,9 @@ class InfoTop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Container(
       constraints: BoxConstraints(
-        maxHeight: size.height * 0.3,
+        maxHeight: 35.h,
       ),
       child: Padding(
         padding: const EdgeInsets.all(6.0),
@@ -23,8 +23,8 @@ class InfoTop extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    width: size.width * 0.5,
-                    height: size.height * 0.3,
+                    width: 50.w,
+                    height: 30.h,
                     child: Column(
                       children: [
                         Text(
@@ -32,27 +32,27 @@ class InfoTop extends StatelessWidget {
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.white70,
-                              fontSize: 18),
+                              fontSize: 16.sp),
                         ),
                         SizedBox(
-                          height: 10,
+                          height: 4.h,
                         ),
                         Text(
                           'Evita grandes aglomeraciones y los espacios mal ventilados',
                           style: TextStyle(
                               fontWeight: FontWeight.w500,
                               color: Colors.white60,
-                              fontSize: 13),
+                              fontSize: 11.sp),
                         ),
                         SizedBox(
-                          height: 25,
+                          height: 6.h,
                         ),
                         Text(
                           'Acude a los centros de pruebas gratuitas solo si presentas sintomas',
                           style: TextStyle(
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w500,
                               color: Color.fromRGBO(217, 200, 134, 1),
-                              fontSize: 10),
+                              fontSize: 9.sp),
                         ),
                       ],
                     ),

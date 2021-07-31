@@ -8,7 +8,6 @@ class Cardtop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Container(
       width: double.infinity,
       height: 25.h,
@@ -38,7 +37,7 @@ class Cardtop extends StatelessWidget {
                         children: [
                           Icon(
                             Icons.health_and_safety_rounded,
-                            size: 46,
+                            size: 38.sp,
                             color: Color.fromRGBO(89, 72, 168, 0.7),
                           ),
                         ],
@@ -50,7 +49,7 @@ class Cardtop extends StatelessWidget {
                             Text(
                               'Casos nuevos',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 16),
+                                  fontWeight: FontWeight.bold, fontSize: 14.sp),
                             )
                           ])),
                       Expanded(
@@ -59,7 +58,7 @@ class Cardtop extends StatelessWidget {
                         children: [
                           Text(this.casosConfirmados,
                               style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 16.sp,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black54))
                         ],
@@ -90,7 +89,7 @@ class Cardtop extends StatelessWidget {
                         children: [
                           Icon(
                             Icons.health_and_safety_rounded,
-                            size: 46,
+                            size: 38.sp,
                             color: Color.fromRGBO(218, 76, 78, 0.7),
                           ),
                         ],
@@ -102,7 +101,7 @@ class Cardtop extends StatelessWidget {
                             Text(
                               'Decesos hoy',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 16),
+                                  fontWeight: FontWeight.bold, fontSize: 14.sp),
                             )
                           ])),
                       Expanded(
@@ -111,7 +110,7 @@ class Cardtop extends StatelessWidget {
                         children: [
                           Text(this.decesosHoy,
                               style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 16.sp,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black54))
                         ],
