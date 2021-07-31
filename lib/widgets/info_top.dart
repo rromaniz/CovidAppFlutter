@@ -22,15 +22,41 @@ class InfoTop extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    width: size.width * 0.4,
+                    width: size.width * 0.5,
                     height: size.height * 0.3,
-                    child: Text('pol'),
-                    color: Colors.amber,
+                    child: Column(
+                      children: [
+                        Text(
+                          'Utilizar mascarilla, salva vidas',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white70,
+                              fontSize: 18),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          'Evita grandes aglomeraciones y los espacios mal ventilados',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white60,
+                              fontSize: 13),
+                        ),
+                        SizedBox(
+                          height: 25,
+                        ),
+                        Text(
+                          'Acude a los centros de pruebas gratuitas solo si presentas sintomas',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              color: Color.fromRGBO(217, 200, 134, 1),
+                              fontSize: 10),
+                        ),
+                      ],
+                    ),
                   ),
-                  SizedBox(
-                    width: size.width * 0.1,
-                  ),
-                  Expanded(child: SvgPicture.asset('assets/mask-man.svg'))
+                  Expanded(child: SvgPicture.asset('assets/mask-woman.svg'))
                 ],
               ),
             ),
