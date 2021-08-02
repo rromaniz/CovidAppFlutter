@@ -44,11 +44,12 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Cardtop(snapshot.data.timeline[0].newConfirmed.toString(),
                       snapshot.data.timeline[0].newDeaths.toString()),
+                  InfoTop(),
                   MiddleCard(
                       snapshot.data.latestData.confirmed,
                       snapshot.data.latestData.deaths,
                       snapshot.data.latestData.recovered,
-                      snapshot.data.latestData.critical)
+                      snapshot.data.latestData.critical),
                 ],
               );
             }
