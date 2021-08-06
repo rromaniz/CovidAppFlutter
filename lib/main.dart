@@ -1,5 +1,5 @@
+import 'package:covi_app/themes/themes.dart';
 import 'package:flutter/material.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:covi_app/providers/data_provider.dart';
 import 'package:covi_app/screens/screens.dart';
@@ -17,6 +17,14 @@ class AppState extends StatelessWidget {
         ChangeNotifierProvider(
           create: (_) => DataProvider(),
           lazy: false,
+        ),
+        ChangeNotifierProvider(
+          create: (_) => ThemeModel(),
+          lazy: false,
+        ),
+        ChangeNotifierProvider(
+          create: (_) => BottomNavigationProvider(),
+          lazy: false,
         )
       ],
       child: MyApp(),
@@ -27,28 +35,19 @@ class AppState extends StatelessWidget {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final theme = Provider.of<ThemeModel>(context);
     return Sizer(builder: (context, orientation, deviceType) {
       return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Info Covid-19',
-        initialRoute: 'home',
-        home: HomeScreen(),
-        onGenerateRoute: (settings) {
-          switch (settings.name) {
-            case 'info':
-              return PageTransition(
-                  child: InfoPage(),
-                  type: PageTransitionType.rightToLeft,
-                  settings: settings,
-                  reverseDuration: Duration(microseconds: 702200));
-            default:
-              return null;
-          }
-        },
-        theme: new ThemeData(
-            scaffoldBackgroundColor: const Color.fromRGBO(246, 248, 250, 1),
-            fontFamily: 'FiraSans'),
-      );
+          debugShowCheckedModeBanner: false,
+          title: 'Info Covid-19',
+          initialRoute: 'home',
+          home: HomeScreen(),
+          routes: {
+            'home': (_) => HomeScreen(),
+            'info': (_) => InfoPage(),
+            'settings': (_) => SettingsPage()
+          },
+          theme: theme.darkTheme ? buildDarkTheme() : buildLightTheme());
     });
   }
 }

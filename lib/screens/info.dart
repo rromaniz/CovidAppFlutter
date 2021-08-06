@@ -8,21 +8,11 @@ class InfoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Información',
-          style: TextStyle(color: Colors.white70, fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
-        elevation: 0,
-        backgroundColor: Color.fromRGBO(74, 191, 180, 1),
-      ),
       body: DefaultTabController(
         length: 2,
         child: Column(
           children: [
             Container(
-              color: Color.fromRGBO(255, 240, 236, 1),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TabBar(
@@ -65,26 +55,28 @@ class InfoPage extends StatelessWidget {
               child: TabBarView(
                 children: [
                   Container(
-                      color: Color.fromRGBO(246, 248, 250, 1),
                       child: Padding(
-                        padding: const EdgeInsets.all(7.0),
-                        child: GridView.count(
-                          primary: false,
-                          crossAxisCount: 2,
-                          mainAxisSpacing: 2,
-                          crossAxisSpacing: 3,
-                          children: [
-                            _CardGrid(237, 230, 255, 'disinfectant',
-                                'Usa gel antibacterial'),
-                            _CardGrid(219, 239, 255, 'medical-mask',
-                                'Porta mascarilla'),
-                            _CardGrid(227, 228, 253, 'stayhome',
-                                'Quedate en casa si te es posible'),
-                            _CardGrid(
-                                254, 227, 229, 'plane', 'Evita aglomeraciones'),
-                          ],
-                        ),
-                      )),
+                    padding: const EdgeInsets.all(7.0),
+                    child: GridView.count(
+                      primary: false,
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 2,
+                      crossAxisSpacing: 3,
+                      children: [
+                        _CardGrid(237, 230, 255, 'disinfectant',
+                            'Usa gel antibacterial'),
+                        _CardGrid(
+                            219, 239, 255, 'medical-mask', 'Porta mascarilla'),
+                        _CardGrid(227, 228, 253, 'stayhome',
+                            'Quedate en casa si te es posible'),
+                        _CardGrid(
+                            254, 227, 229, 'plane', 'Evita aglomeraciones'),
+                        _CardGrid(
+                            216, 255, 208, 'sana', 'Mantén sana distancia'),
+                        _CardGrid(254, 224, 141, 'water', 'Lávate las manos'),
+                      ],
+                    ),
+                  )),
                   Container(child: Text('Luke'))
                 ],
               ),
@@ -127,10 +119,8 @@ class _CardGrid extends StatelessWidget {
                 padding: EdgeInsets.all(4),
                 child: Text(
                   this.titulo,
-                  style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      color: Color.fromRGBO(49, 55, 70, 1),
-                      fontSize: 10.sp),
+                  style:
+                      TextStyle(fontWeight: FontWeight.w500, fontSize: 10.sp),
                 ),
               ),
               flex: 3,

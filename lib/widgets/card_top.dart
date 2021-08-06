@@ -13,10 +13,8 @@ class Cardtop extends StatelessWidget {
       height: 25.h,
       padding: EdgeInsets.all(7),
       decoration: BoxDecoration(
-          color: Color.fromRGBO(74, 191, 180, 1),
           borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(16),
-              bottomRight: Radius.circular(16))),
+              bottomLeft: Radius.circular(6), bottomRight: Radius.circular(6))),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
