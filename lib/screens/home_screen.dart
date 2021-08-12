@@ -13,6 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final bottomProvider = Provider.of<BottomNavigationProvider>(context);
+    final theme = Provider.of<ThemeModel>(context);
 
     return Scaffold(
         appBar: AppBar(
@@ -22,6 +23,15 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           centerTitle: true,
           elevation: 0,
+          actions: [
+            IconButton(
+                onPressed: () {
+                  theme.darkTheme = !theme.darkTheme;
+                  print('hi');
+                },
+                icon: Icon(
+                    theme.darkTheme ? Icons.nightlight_round : Icons.wb_sunny))
+          ],
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: bottomProvider.selectedIndex,
@@ -39,9 +49,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   Icons.home,
                 ),
                 label: 'Home'),
-            BottomNavigationBarItem(icon: Icon(Icons.info), label: 'Info'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: 'Settings')
+                icon: Icon(Icons.night_shelter_rounded), label: 'Cuidados'),
+            BottomNavigationBarItem(icon: Icon(Icons.info), label: 'Info')
           ],
         ),
         body: currentTab[bottomProvider.selectedIndex]);

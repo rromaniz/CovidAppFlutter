@@ -77,7 +77,23 @@ class InfoPage extends StatelessWidget {
                       ],
                     ),
                   )),
-                  Container(child: Text('Luke'))
+                  Container(
+                    padding: const EdgeInsets.all(7.0),
+                    child: GridView.count(
+                      primary: false,
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 2,
+                      crossAxisSpacing: 3,
+                      children: [
+                        _CardGrid(237, 230, 255, 'sneeze',
+                            'Estornudos, molestias y dolores'),
+                        _CardGrid(219, 239, 255, 'cough', 'Tos seca'),
+                        _CardGrid(227, 228, 253, 'temperature', 'Fiebre'),
+                        _CardGrid(254, 227, 229, 'doctor',
+                            'Acude al medico solo si tus sintomas son graves'),
+                      ],
+                    ),
+                  )
                 ],
               ),
             ))

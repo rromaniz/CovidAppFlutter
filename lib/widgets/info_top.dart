@@ -3,8 +3,6 @@ import 'package:sizer/sizer.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class InfoTop extends StatelessWidget {
-  const InfoTop({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
